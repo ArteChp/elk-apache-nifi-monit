@@ -322,17 +322,18 @@ $ sudo systemctl start logstash.service
 ### Building a Simple NiFi Pipeline to Accept Syslog on Local UDP Port 514 and Forward it to ElasticSearch
 1. Logged into NiFi at https://localhost:8443/nifi/
 2. Created and set up the 'ListenUDP' processor for localhost:514:
-![[Pasted image 20230626033107.png]]
 
-3. Created and set up the 'PutElasticsearchJson' processor:
+![ListenUDP](https://i.imgur.com/C6EmyIK.png)
 
-![[Pasted image 20230626033317.png]]
+4. Created and set up the 'PutElasticsearchJson' processor:
+
+![PutElasticsearchJson](https://i.imgur.com/iMIFsQ4.png)
 
 4. Created and set up the 'ElasticSearchClientServiceImpl' processor:
 
-![[Pasted image 20230626033541.png]]
+![ElasticSearchClientServiceImpl](https://i.imgur.com/Niq2T04.png)
 
-![[Pasted image 20230626033701.png]]
+![ElasticSearchClientServiceImpl](https://i.imgur.com/68ubM6d.png)
 
 
 
@@ -340,13 +341,13 @@ $ sudo systemctl start logstash.service
 
 The setup from the previous steps has already configured this functionality. Here's the visualization of the pipeline:
 
-![[Pasted image 20230626035030.png]]
+![NiFi Pipeline](https://i.imgur.com/uLbBZOC.png)
 
 
 
 ### Testing the Setup with a Query in Kibana Console
 
-![[Pasted image 20230626040220.png]]
+![Kibana Console](https://i.imgur.com/fo0XidA.png)
 
 
 
@@ -354,7 +355,7 @@ The setup from the previous steps has already configured this functionality. Her
 
 ### Visualization of Metrics from Kibana Dashboard - Count of Records by Timestamp over the Last Three Days
 
-![[Pasted image 20230626041034.png]]
+![Kibana Dashboard](https://i.imgur.com/ccZ6vIg.png)
 
 The following chart demonstrates the count of records by timestamp over the past three days. The irregularity of the data is because the VM system was only operational during working hours.
 
@@ -363,7 +364,7 @@ The following chart demonstrates the count of records by timestamp over the past
 
 Here's the visual representation of the total CPU usage:
 
-![[Pasted image 20230626060159.png]]
+![CPU Total Usage](https://i.imgur.com/GHcKMak.png)
 
 
 
@@ -371,14 +372,14 @@ Here's the visual representation of the total CPU usage:
 
 The following chart represents the disk usage:
 
-![[Pasted image 20230626170550.png]]
+![Disk Usage](https://i.imgur.com/qa3tZFw.png)
 
 
 ### Metrics from NiFi
 
 Finally, here are the gathered metrics from NiFi:
 
-![[Pasted image 20230626165442.png]]
+![NiFi Metrics](https://i.imgur.com/C11EHbW.png)
 
 
 Through our setup, I implemented a pipeline that collected system log and NiFi metrics and stored them in an ElasticSearch and InfluxDB databases. Here are the summarized outcomes and insights:
