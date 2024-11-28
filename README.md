@@ -1,4 +1,4 @@
-# Guide to Monitoring with ELK, Apache NiFi, Grafana
+# Monitoring with ELK, Apache NiFi, Grafana
 ## **Introduction**
 
 The purpose of my work was to install and configure Elasticsearch (alongside Kibana), and Apache NiFi on a Ubuntu VM, and use them to construct simple data pipelines. I aimed to build a pipeline in NiFi that accepts syslog on local port UDP 514 and sends it on to Elasticsearch. Additionally, I used Filebeat and Logstash to create a pipeline in NiFi to gather data from /var/log/syslog (Ubuntu) and forward it to Elasticsearch. 
